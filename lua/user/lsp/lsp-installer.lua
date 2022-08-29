@@ -5,6 +5,7 @@ end
 
 local servers = {
   "sumneko_lua",
+  "clangd",
   "cssls",
   "html",
   "tsserver",
@@ -12,6 +13,7 @@ local servers = {
   "bashls",
   "jsonls",
   "yamlls",
+  "jdtls"
 }
 
 lsp_installer.setup()
@@ -39,5 +41,8 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
 
+  if server == "jdtls" then goto continue end
+
   lspconfig[server].setup(opts)
+  ::continue::
 end
