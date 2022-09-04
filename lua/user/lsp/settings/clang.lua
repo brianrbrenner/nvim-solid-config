@@ -18,7 +18,6 @@ lspconfig.clangd.setup({
 		"clangd",
 		"--background-index",
 		"--pch-storage=memory",
-		"--clang-tidy",
 		"--suggest-missing-includes",
 		"--cross-file-rename",
 		"--completion-style=detailed",

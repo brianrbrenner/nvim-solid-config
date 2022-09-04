@@ -70,6 +70,8 @@ return packer.startup(function(use)
 	use({ "yazeed1s/minimal.nvim" })
 	use({ "rktjmp/lush.nvim", commit = "41bbfdbb054d4a1adc36a233dffb9478515bcb21" })
 	use({ "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" })
+	use({ "sainnhe/gruvbox-material" })
+	use({ "morhetz/gruvbox" })
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- The completion plugin
