@@ -29,8 +29,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
--- format on save w/o null_ls
-vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
+-- format on save
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
 vim.cmd("autocmd FileType c ++nested colorscheme gruvbox-material")

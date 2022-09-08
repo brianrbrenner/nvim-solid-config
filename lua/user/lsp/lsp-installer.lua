@@ -31,6 +31,11 @@ for _, server in pairs(servers) do
 		capabilities = require("user.lsp.handlers").capabilities,
 	}
 
+	if server == "clangd" then
+		local clangd_opts = require("user.lsp.settings.clang")
+		opts = vim.tbl_deep_extend("force", clangd_opts, opts)
+	end
+
 	if server == "sumneko_lua" then
 		local sumneko_opts = require("user.lsp.settings.sumneko_lua")
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)

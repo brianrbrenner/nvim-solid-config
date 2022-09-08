@@ -8,6 +8,9 @@ end
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+M.capabilities.textDocument.completion.completionItem.resolveSupport = {
+	properties = { "documentation", "detail", "additionalTextEdits" },
+}
 
 M.setup = function()
 	local signs = {
@@ -80,10 +83,6 @@ M.on_attach = function(client, bufnr)
 		client.resolved_capabilities.document_formatting = false
 	end
 
-	if client.name == "clangd" then
-		client.resolved_capabilities.document_formatting = false
-	end
-
 	lsp_keymaps(bufnr)
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then
@@ -93,3 +92,4 @@ M.on_attach = function(client, bufnr)
 end
 
 return M
+

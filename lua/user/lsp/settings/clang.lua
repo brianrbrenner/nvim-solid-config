@@ -1,19 +1,8 @@
-local lspconfig = require("lspconfig.configs")
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-	properties = { "documentation", "detail", "additionalTextEdits" },
-}
-
-local cmp_capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-
-local clangd_capabilities = cmp_capabilities
-clangd_capabilities.textDocument.semanticHighlighting = true
-clangd_capabilities.offsetEncoding = { "utf-8" }
-
-lspconfig.clangd.setup({
-	capabilities = clangd_capabilities,
+return {
+  capabilities = {
+    semanticHighlighting = true,
+    offsetEncoding = { "utf-8" }
+  },
 	cmd = {
 		"clangd",
 		"--background-index",
@@ -28,4 +17,4 @@ lspconfig.clangd.setup({
 		completeUnimported = true,
 		semanticHighlighting = true,
 	},
-})
+}
