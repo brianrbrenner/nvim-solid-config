@@ -1,6 +1,5 @@
 return {
   capabilities = {
-    semanticHighlighting = true,
     offsetEncoding = { "utf-8" }
   },
 	cmd = {
