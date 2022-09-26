@@ -18,6 +18,12 @@ null_ls.setup({
 				buffer = bufnr,
 				callback = function()
 					-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+          -- vim.lsp.buf.format({
+          --   bufnr = bufnr,
+          --   filter = function(client)
+          --     return client.name == "null-ls"
+          --   end,
+          -- })
 					vim.lsp.buf.formatting_sync()
 				end,
 			})
@@ -26,11 +32,13 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({
-			extra_filetypes = { "toml" },
+			extra_filetypes = { "toml", "json" },
 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
 		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
+    formatting.stylua,
 		formatting.google_java_format,
 		diagnostics.flake8,
+    diagnostics.eslint_d,
 	},
 })

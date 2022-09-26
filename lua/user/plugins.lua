@@ -58,16 +58,9 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" })
 
 	-- Colorschemes
-	use({ "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" })
-	use({
-		"mcchrish/zenbones.nvim",
-		-- Optionally install Lush. Allows for more configuration or extending the colorscheme
-		-- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-		-- In Vim, compat mode is turned on as Lush only works in Neovim.
-		requires = "rktjmp/lush.nvim",
-	})
 	use({ "rktjmp/lush.nvim", commit = "41bbfdbb054d4a1adc36a233dffb9478515bcb21" })
 	use({ "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" })
+  use({ "LunarVim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" })
 	use({ "sainnhe/gruvbox-material" })
   use({ "RRethy/nvim-base16" })
 
