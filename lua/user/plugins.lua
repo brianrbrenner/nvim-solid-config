@@ -87,6 +87,7 @@ return packer.startup(function(use)
 	use({ "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" })
 	use({ "p00f/clangd_extensions.nvim", commit = "57e9357f74672fcd7b9847f60375ad34b97e94a0" })
 	-- use({ "junnplus/lsp-setup.nvim", commit = "5180bdaf0cd19534afc0ea1a4a45fab8ccfc1b9a" })
+	use({ "ray-x/lsp_signature.nvim", commit = "e65a63858771db3f086c8d904ff5f80705fd962b" })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })

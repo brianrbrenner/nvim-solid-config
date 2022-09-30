@@ -89,7 +89,13 @@ M.on_attach = function(client, bufnr)
 		return
 	end
 	illuminate.on_attach(client)
+
+	require("lsp_signature").on_attach({
+		doc_lines = 0,
+		handler_opts = {
+			border = "none",
+		},
+	})
 end
 
 return M
-

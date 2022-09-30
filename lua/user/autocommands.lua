@@ -34,15 +34,15 @@ vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
 
 -- c / cpp
-vim.cmd("autocmd FileType c ++nested colorscheme base16-gruvbox-dark-hard")
-vim.cmd("autocmd FileType h ++nested colorscheme base16-gruvbox-dark-hard")
-vim.cmd("autocmd FileType cpp ++nested colorscheme base16-gruvbox-dark-hard")
-vim.cmd("autocmd FileType hpp ++nested colorscheme base16-gruvbox-dark-hard")
-vim.cmd([[
-if &filetype == "cpp" || &filetype == "cuda" || &filetype == "c"
-  autocmd BufEnter,TextChanged <buffer> lua require 'vim.lsp.buf'.semantic_tokens_full()
-endif
-]])
+-- vim.cmd("autocmd FileType c ++nested colorscheme base16-gruvbox-dark-hard")
+-- vim.cmd("autocmd FileType h ++nested colorscheme base16-gruvbox-dark-hard")
+-- vim.cmd("autocmd FileType cpp ++nested colorscheme base16-gruvbox-dark-hard")
+-- vim.cmd("autocmd FileType hpp ++nested colorscheme base16-gruvbox-dark-hard")
+-- vim.cmd([[
+-- if &filetype == "cpp" || &filetype == "cuda" || &filetype == "c"
+--   autocmd BufEnter,TextChanged <buffer> lua require 'vim.lsp.buf'.semantic_tokens_full()
+-- endif
+-- ]])
 
 -- Fixes Autocomment
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
